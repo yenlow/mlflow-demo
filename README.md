@@ -64,6 +64,38 @@ host      = https://your_databricks_host.azuredatabricks.net
 auth_type = databricks-cli
 ```
 
-3. Check that you have the right access to the catalog, schema selected  
+3. If you see this error:   
+```
+App status: ApplicationState.CRASHED - waiting...
+⚠️  Timeout waiting for app 'mlflow-demo-app-f387' to be ready
+⚠️  App deployment validation timed out
+❌ Failed: Validate Deployment
+   Error: Step execution failed
+```
+Check that you and the App's Service Principle (SP) have the right access to the catalog, schema selected
+In Databricks:
+
+a) Go to Compute > Apps > your_new_app_created > Authorization to copy the SP client ID
+![](img/app_sp.png)
+
+Then ensure the following permissions are set for App SP:
+- USE CATALOG on 'your_catalog'
+- ALL_PRIVILEGES + MANAGE on 'your_catalog.your_schema'
+- CAN_MANAGE on MLflow experiment
+- [OPTIONAL] CAN_QUERY on model serving endpoint 'databricks-claude-3-7-sonnet'
+
+b) Go to Catalog > your_catalog > your_schema > Grant and grant SP the following:
+![](img/grant_schema.png)
+
+c) Go to Experiments > your_experiment > Permissions to grant SP "manage" access:
+![](img/grant_expt.png)
+
+d) Re-deploy the App once all the above permissions are properly set. The App url should be running
+Compute > Apps > your_new_app_created > Deploy
+![](img/app_deployed.png)
+
+e) `./auto-setup.sh --resume`
+
 4. To start over, delete `.setup_progress.json`, `.env.local`
+
 
