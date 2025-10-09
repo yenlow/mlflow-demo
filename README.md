@@ -1,9 +1,9 @@
 ## Part 1\. Git clone on local terminal
 1. On your local computer (not Databricks website)
    
-   `git clone https://github.com/databricks-solutions/mlflow-demo.git`
+   `git clone https://github.com/yenlow/mlflow-demo.git`
 
-3. Read the [README](https://github.com/databricks-solutions/mlflow-demo). Choose Option A (auto-setup)
+3. Read the original [README](README_original.md). Choose Option A (auto-setup)
 
    ```
    cd mlflow-demo
@@ -15,15 +15,19 @@
    - call [`install-prerequisites.sh`](http://install-prerequisites.sh) to check and install the system prerequisites (Databricks CLI \>= 0.262.0, Python \>= 3.10.16, uv, bun)  
    - call `initialize-environment.sh` to do a uv sync according to uv.lock and bun install JS UI dependencies  
    - activate .venv  
-   - call `auto-setup.py` to deploy to your Databricks workspace all the repo files, Delta tables, set up Databricks Apps, MLFlow Experiment for tracing via Databricks CLI and Databricks SDK. This process takes \~15 mins with at least 3 progress bars.
+   - call `auto-setup.py` to deploy to your Databricks workspace all the repo files, Delta tables, set up Databricks Apps, MLFlow Experiment for tracing via Databricks CLI and Databricks SDK. 
+   **This process takes \~15 mins with at least 3 progress bars.**
         
-4. ./auto-setup.sh will prompt for several inputs and options:  
+4. `auto-setup.sh` will prompt for several inputs and options:  
    - Choose the Apps option (default), not Notebooks only option  
    - It will suggest catalogs and schema but you can also specify your own  
    - Apps name (pick the default)  
    - LLM serving endpoint (only tested with default Claude 3.7 Sonnet)  
-   - You can enter the above when prompted or edit the .env.local file which will be the default options for prompting. If you need to restart, delete the .env.local file so a fresh one will be created based on the prompted inputs.
-      
+   - You can enter the above when prompted or edit the `.env.local` file which will be the default options for prompting.<br>
+   If you need to restart, delete the `.env.local` file so a fresh one will be created based on the prompted inputs.
+
+**This setup process takes \~15 mins with at least 3 progress bars.**
+ 
 5. If successfully set up, you will see this on your local terminal:
 
 ```shell
