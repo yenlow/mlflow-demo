@@ -41,14 +41,14 @@
 If issues arise, see [Troubleshooting](##Troubleshooting)
 
 ## Part 3\. Databricks workspace preparation
-6. Go to the Databricks Apps link in the successfully deployed message  
-   ![][img/app.png]  
+6. Go to the Databricks Apps link in the successfully deployed message
+![](img/app.png)
 
 7. On the left menu, click on “Observe with tracing”. Scroll down to the Interactive Notebook 1\_observe\_with\_traces and click “Open in Databricks”
-![][img/open_nb.png]
+![](img/open_nb.png)
 
 8. This will bring up the notebooks in your Workspace. Clone the notebooks to your personal folder so you don’t step on each other’s notebooks
-![][img/clone_nb]
+![](img/clone_nb.png)
 
 ## Troubleshooting
 1. Check that you have the system prerequisites  
@@ -62,4 +62,4 @@ auth_type = databricks-cli
 
 3. Check that you have the right access to the catalog, schema selected  
 4. To start over, delete `.setup_progress.json`, `.env.local`
-5. 
+
