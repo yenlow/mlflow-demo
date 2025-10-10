@@ -43,7 +43,7 @@ def setup_local_ide_env():
   sys.path.append('../')
 
 
-def setup_databricks_notebook_env():
+def setup_databricks_notebook_env(yaml_path='../../app.yaml'):
   """Set up environment for Databricks notebook execution.
 
   Configures MLflow tracking for Databricks environment and loads app.yaml variables.
@@ -56,7 +56,7 @@ def setup_databricks_notebook_env():
 
   sys.path.append('../../')
 
-  def load_app_yaml_env_vars(file_path='../../app.yaml'):
+  def load_app_yaml_env_vars(file_path=yaml_path):
     with open(file_path, 'r') as file:
       config = yaml.safe_load(file)
 

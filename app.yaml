@@ -7,6 +7,7 @@ env:
     value: 'databricks'
   - name: 'MLFLOW_EXPERIMENT_ID'
     value: 'your-experiment-id'
+  # Change MLFLOW_EXPERIMENT_ID above
   - name: 'LOW_ACCURACY_RESULTS_URL'
     value: 'placeholder-low-accuracy-url'
   - name: 'REGRESSION_RESULTS_URL'

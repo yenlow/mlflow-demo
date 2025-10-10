@@ -48,10 +48,15 @@ If issues arise, see [Troubleshooting](##Troubleshooting)
 6. Go to the Databricks Apps link in the successfully deployed message
 ![](img/app.png)
 
-7. On the left menu, click on “Observe with tracing”. Scroll down to the Interactive Notebook 1\_observe\_with\_traces and click “Open in Databricks”
+7. On the left menu, click on “Observe with tracing”. Scroll down to the Interactive Notebook 1\_observe\_with\_traces and click “Open in Databricks”.<br>
+This will bring up the notebooks in your Workspace. 
 ![](img/open_nb.png)
 
-8. This will bring up the notebooks in your Workspace. Clone the notebooks to your personal folder so you don’t step on each other’s notebooks
+## Part 4\. Only if you want to clone multiple user folders for a training cohort [OPTIONAL]
+8. The cohort can share the App link above.<br>
+To avoid multiple users stepping over each other's notebooks:
+- Clone the root folder
+- Create your unique Experiment (see [0_demo_overview]($mlflow_demo/notebooks/0_demo_overview)) and link to it in [app.yaml]($./app.yaml).
 ![](img/clone_nb.png)
 
 ## Troubleshooting
@@ -90,7 +95,7 @@ b) Go to Catalog > your_catalog > your_schema > Grant and grant SP the following
 c) Go to Experiments > your_experiment > Permissions to grant SP "manage" access:
 ![](img/grant_expt.png)
 
-d) Re-deploy the App once all the above permissions are properly set. The App url should be running
+d) Re-deploy the App once all the above permissions are properly set. The App url should be running.<br>
 Compute > Apps > your_new_app_created > Deploy
 ![](img/app_deployed.png)
 
